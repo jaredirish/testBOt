@@ -1,0 +1,18 @@
+
+  # .github/workflows/claude-code.yml
+  name: Claude Code
+  on:
+    issue_comment:
+      types: [created]
+
+  jobs:
+    claude:
+      if: contains(github.event.comment.body, '/claude')
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+        - uses: anthropics/claude-code-action@v1
+          with:
+            anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+            app_id: ${{ secrets.APP_ID }}
+            app_private_key: ${{ secrets.APP_PRIVATE_KEY }}
