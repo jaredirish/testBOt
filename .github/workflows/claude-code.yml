@@ -35,3 +35,5 @@ jobs:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ steps.app-token.outputs.token }}
           trigger_phrase: "@claude"
+          bot_id: "282387086"
+          bot_name: "scribdevbot[bot]"
